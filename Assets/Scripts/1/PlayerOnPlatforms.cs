@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E001_PlayerController : MonoBehaviour
+public class PlayerOnPlatforms : MonoBehaviour
 {
     public GameObject movingPlatform;
 

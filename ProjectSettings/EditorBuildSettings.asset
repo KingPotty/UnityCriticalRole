@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1_MovingPlatform.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/2_Crates.unity
+    guid: e27ee63c2b1eca546aaf0ef4c8e78454
   m_configObjects: {}

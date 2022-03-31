@@ -21,7 +21,7 @@ public class CharacterSwitching : MonoBehaviour {
 
         // select first one
         selection = 0;
-        playerList[selection].gameObject.GetComponent<E003_PlayerController>().isSelected = true;
+        playerList[selection].gameObject.GetComponent<PlayerController_MultipleCharactersAtGoal>().isSelected = true;
 
         // Initialise current and previous 
         playerCurXValues = new float[playerList.Count];
@@ -45,18 +45,18 @@ public class CharacterSwitching : MonoBehaviour {
 
         // Q and E allow changing of selected character. Wraps around
         if (Input.GetKeyDown(KeyCode.Q)) {
-            playerList[selection].gameObject.GetComponent<E003_PlayerController>().isSelected = false;
+            playerList[selection].gameObject.GetComponent<PlayerController_MultipleCharactersAtGoal>().isSelected = false;
             selection -= 1;
             selection = Mathf.Abs(selection % playerList.Count);
-            playerList[selection].gameObject.GetComponent<E003_PlayerController>().isSelected = true;
+            playerList[selection].gameObject.GetComponent<PlayerController_MultipleCharactersAtGoal>().isSelected = true;
             print(selection);
         }
 
         if (Input.GetKeyDown(KeyCode.E)) {
-            playerList[selection].gameObject.GetComponent<E003_PlayerController>().isSelected = false;
+            playerList[selection].gameObject.GetComponent<PlayerController_MultipleCharactersAtGoal>().isSelected = false;
             selection += 1;
             selection = Mathf.Abs(selection % playerList.Count);
-            playerList[selection].gameObject.GetComponent<E003_PlayerController>().isSelected = true;
+            playerList[selection].gameObject.GetComponent<PlayerController_MultipleCharactersAtGoal>().isSelected = true;
             print(selection);
         }
 

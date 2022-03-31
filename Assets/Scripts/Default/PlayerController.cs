@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         Move();
 
-        if (Vector2.Distance(this.transform.position, this.goal.transform.position) < this.goalDistance)
+        if (CheckIfWon())
         {
             SceneManager.LoadScene("MainMenu");
         }
@@ -58,5 +58,15 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.down, 0.01f, platformLayerMask);
         return hit.collider != null;
+    }
+
+    protected bool CheckAtGoal()
+    {
+        return Vector2.Distance(this.transform.position, this.goal.transform.position) < this.goalDistance;
+    }
+
+    protected virtual bool CheckIfWon()
+    {
+        return CheckAtGoal();
     }
 }
