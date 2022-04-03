@@ -11,22 +11,20 @@ public class PlayerController : MonoBehaviour
     public Color defaultColour;
     public Color colourAtGoal;
 
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
     private BoxCollider2D bc;
-    private SpriteRenderer sr;
     public float speed;
     public float jumpForce;
 
     [SerializeField] LayerMask platformLayerMask;
 
-    void Start()
+    protected virtual void Start()
     {
         this.rb = GetComponent<Rigidbody2D>();
         this.bc = GetComponent<BoxCollider2D>();
-        this.sr = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         Move();
 
@@ -41,7 +39,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Move()
+    protected void Move()
     {
         float xAxisInput = Input.GetAxisRaw("Horizontal");
 
